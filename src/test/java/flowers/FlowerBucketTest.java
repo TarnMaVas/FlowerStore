@@ -1,7 +1,5 @@
 package flowers;
 
-package flowers;
-
 import java.util.Random;
 
 import org.junit.jupiter.api.Assertions;
