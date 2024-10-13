@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import flower.store.Flower;
 import flower.store.FlowerColor;
-import flower.store.FlowerInfo;
 import flower.store.FlowerPack;
 import flower.store.FlowerType;
 
@@ -36,8 +35,6 @@ public class FlowerPackTest {
     @Test
     public void testMatches() {
         Flower flower = new Flower(DEFAULT_PRICE, DEFAULT_LENGTH,
-                             FlowerColor.RED, FlowerType.ROSE);
-        Flower flowerCheck = new Flower(DEFAULT_PRICE, DEFAULT_LENGTH,
                              FlowerColor.RED, FlowerType.ROSE);
         FlowerPack flowerPack = new FlowerPack(flower, DEFAULT_COUNT);
         Assertions.assertTrue(flowerPack.matches(flower));
