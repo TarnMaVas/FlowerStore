@@ -18,7 +18,7 @@ public class FlowerStore {
        flowerBuckets.add(flowerBucket);
    }
 
-   public List<FlowerBucket> Search(ArrayList<FlowerInfo> flowerDescriptions) {
+   public List<FlowerBucket> Search(List<FlowerInfo> flowerDescriptions) {
        List<FlowerBucket> searchResult = new ArrayList<>();
        for (FlowerBucket flowerBucket: flowerBuckets) {
            if (flowerBucket.matches(flowerDescriptions)) {

@@ -18,6 +18,6 @@ public class FlowerPack {
     }
     
     public boolean matches(FlowerInfo flowerInfo) {
-        return this.flower.matches(flower);
+        return this.flower.matches(flowerInfo);
     }
 }

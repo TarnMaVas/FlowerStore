@@ -24,7 +24,7 @@ public class FlowerBucket {
         return price;
     }
 
-    public boolean matches(ArrayList<FlowerInfo> flowerDescriptions) {
+    public boolean matches(List<FlowerInfo> flowerDescriptions) {
         for (FlowerInfo flowerInfo: flowerDescriptions) {
             if (!flowerPacks.stream().anyMatch(pack -> pack.matches(flowerInfo))) {
                 return false;
