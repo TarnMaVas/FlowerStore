@@ -1,7 +1,6 @@
 package flowers;
 
 import java.util.List;
-import java.util.Random;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,9 +15,6 @@ import flower.store.FlowerStore;
 import flower.store.FlowerType;
 
 public class FlowerStoreTest {
-    private static final Random RANDOM_GENERATOR = new Random();
-    private static final int MAX_QUANTITY = 1000;
-    private static final int MAX_PRICE = 100;
 
     private FlowerStore flowerStore;
 
@@ -45,7 +41,7 @@ public class FlowerStoreTest {
         FlowerBucket flowerBucket2 = new FlowerBucket();
         flowerBucket2.add(flowerPack1);
 
-        FlowerStore flowerStore = new FlowerStore();
+        flowerStore = new FlowerStore();
         flowerStore.addBucket(flowerBucket1);
         flowerStore.addBucket(flowerBucket2);
 
