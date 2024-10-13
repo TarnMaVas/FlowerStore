@@ -6,6 +6,10 @@
 
 <module name="Checker">
 
+    <module name="FileSet">
+        <property name="includes" value="**/*.java"/>
+        <property name="excludes" value="**/test/**, **/*Test.java"/>
+    </module>
 
     <!-- Checks that property files contain the same keys. -->
     <module name="Translation"/>

@@ -27,7 +27,7 @@ public class FlowerInfo {
     }
 
     public boolean matches(FlowerInfo flowerInfo) {
-        return this.sepalLength ==flowerInfo.sepalLength && 
+        return this.sepalLength == flowerInfo.sepalLength && 
                this.color == flowerInfo.color && 
                this.type == flowerInfo.type;
     }

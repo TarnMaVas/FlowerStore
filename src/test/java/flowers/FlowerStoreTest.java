@@ -51,8 +51,8 @@ public class FlowerStoreTest {
         List<FlowerBucket> expectedMatching = List.of(flowerBucket1);
         List<FlowerBucket> expectedNotMatching = List.of();
 
-        Assertions.assertEquals(expectedMatching, flowerStore.Search(matchingList));
-        Assertions.assertEquals(expectedNotMatching, flowerStore.Search(notMatchingList));
+        Assertions.assertEquals(expectedMatching, flowerStore.search(matchingList));
+        Assertions.assertEquals(expectedNotMatching, flowerStore.search(notMatchingList));
     }
 }
 

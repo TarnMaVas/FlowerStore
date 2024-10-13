@@ -16,7 +16,8 @@ public class Flower extends FlowerInfo {
         this.type = flower.getType();
     }
 
-    public Flower(double price, double sepalLength, FlowerColor color, FlowerType type) {
+    public Flower(double price, double sepalLength,
+                 FlowerColor color, FlowerType type) {
         this.price = price;
         this.sepalLength = sepalLength;
         this.color = color;
