@@ -11,16 +11,16 @@ public class Flower extends FlowerInfo {
 
     public Flower(Flower flower) {
         this.price = flower.price;
-        this.sepalLength = flower.getSepalLength();
-        this.color = flower.color;
-        this.type = flower.getType();
+        this.setSepalLength(flower.getSepalLength());
+        this.setColor(FlowerColor.getColor(flower.getColor()));
+        this.setType(flower.getType());
     }
 
     public Flower(double price, double sepalLength,
                  FlowerColor color, FlowerType type) {
-        this.price = price;
-        this.sepalLength = sepalLength;
-        this.color = color;
-        this.type = type;
+        this.setPrice(price);
+        this.setSepalLength(sepalLength);
+        this.setColor(color);
+        this.setType(type);
     }
 }

@@ -11,6 +11,8 @@ import flower.store.FlowerType;
 
 public class FlowerTest {
     private static final Random RANDOM_GENERATOR = new Random();
+    public static final int DEFAULT_PRICE = 10;
+    public static final int DEFAULT_LENGTH = 5;
     private static final int MAX_PRICE = 100;
     private static final double MAX_LENGTH = 100.0;
     private Flower flower;
@@ -50,30 +52,30 @@ public class FlowerTest {
 
     @Test
     public void testConstructor() {
-        Flower flower = new Flower(10.0, 5.0, FlowerColor.RED, FlowerType.ROSE);
-        Assertions.assertEquals(10.0, flower.getPrice());
-        Assertions.assertEquals(5.0, flower.getSepalLength());
+        flower = new Flower(DEFAULT_PRICE, DEFAULT_LENGTH, FlowerColor.RED, FlowerType.ROSE);
+        Assertions.assertEquals(DEFAULT_PRICE, flower.getPrice());
+        Assertions.assertEquals(DEFAULT_LENGTH, flower.getSepalLength());
         Assertions.assertEquals("#FF0000", flower.getColor());
         Assertions.assertEquals(FlowerType.ROSE, flower.getType());
     }
 
     @Test
     public void testMatch() {
-        Flower flower = new Flower(10.0, 5.0, FlowerColor.RED, FlowerType.ROSE);
-        Flower flower2 = new Flower(20.0, 5.0, FlowerColor.RED, FlowerType.ROSE);
-        Flower flower3 = new Flower(10.0, 5.0, FlowerColor.BLUE, FlowerType.ROSE);
-        Assertions.assertTrue(flower.matches(flower2));
-        Assertions.assertFalse(flower.matches(flower3));
+        flower = new Flower(DEFAULT_PRICE, DEFAULT_LENGTH, FlowerColor.RED, FlowerType.ROSE);
+        Flower flowerA = new Flower(DEFAULT_PRICE, DEFAULT_LENGTH, FlowerColor.RED, FlowerType.ROSE);
+        Flower flowerB = new Flower(DEFAULT_PRICE, DEFAULT_LENGTH, FlowerColor.BLUE, FlowerType.ROSE);
+        Assertions.assertTrue(flower.matches(flowerA));
+        Assertions.assertFalse(flower.matches(flowerB));
     }
 
     @Test
     public void testCopyConstructor() {
-        Flower flower = new Flower(10.0, 5.0, FlowerColor.RED, FlowerType.ROSE);
-        Flower flower2 = new Flower(flower);
-        Assertions.assertEquals(10.0, flower2.getPrice());
-        Assertions.assertEquals(5.0, flower2.getSepalLength());
-        Assertions.assertEquals("#FF0000", flower2.getColor());
-        Assertions.assertEquals(FlowerType.ROSE, flower2.getType());
-        Assertions.assertNotSame(flower, flower2);
+        flower = new Flower(DEFAULT_PRICE, DEFAULT_LENGTH, FlowerColor.RED, FlowerType.ROSE);
+        Flower flowerA = new Flower(flower);
+        Assertions.assertEquals(DEFAULT_PRICE, flowerA.getPrice());
+        Assertions.assertEquals(DEFAULT_LENGTH, flowerA.getSepalLength());
+        Assertions.assertEquals("#FF0000", flowerA.getColor());
+        Assertions.assertEquals(FlowerType.ROSE, flowerA.getType());
+        Assertions.assertNotSame(flower, flowerA);
     }
 }

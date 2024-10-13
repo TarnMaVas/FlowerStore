@@ -9,12 +9,12 @@ import lombok.Setter;
 public class FlowerInfo {
 
     @Getter
-    protected double sepalLength;
+    private double sepalLength;
 
-    protected FlowerColor color;
+    private FlowerColor color;
 
     @Getter
-    protected FlowerType type;
+    private FlowerType type;
 
     public FlowerInfo(FlowerInfo flowerInfo) {
         this.sepalLength = flowerInfo.getSepalLength();
@@ -27,9 +27,9 @@ public class FlowerInfo {
     }
 
     public boolean matches(FlowerInfo flowerInfo) {
-        return this.sepalLength == flowerInfo.sepalLength && 
-               this.color == flowerInfo.color && 
-               this.type == flowerInfo.type;
+        return this.sepalLength == flowerInfo.getSepalLength()
+               && this.getColor().equals(flowerInfo.getColor())
+               && this.type == flowerInfo.getType();
     }
 
 }

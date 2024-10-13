@@ -16,6 +16,10 @@ import flower.store.FlowerType;
 
 public class FlowerStoreTest {
 
+    public static final int DEFAULT_PRICE = 10;
+    public static final int DEFAULT_LENGTH = 5;
+    public static final int DEFAULT_COUNT = 5;
+
     private FlowerStore flowerStore;
 
     @BeforeEach
@@ -25,34 +29,42 @@ public class FlowerStoreTest {
 
     @Test
     public void testSearch() {
-        Flower flower1 = new Flower(5.0, 5.0, FlowerColor.RED, FlowerType.ROSE);
-        Flower flower2 = new Flower(5.0, 5.0, FlowerColor.BLUE, FlowerType.TULIP);
-        FlowerInfo flowerInfo1 = new FlowerInfo(5.0, FlowerColor.BLUE, FlowerType.TULIP);
-        FlowerInfo flowerInfo2 = new FlowerInfo(5.0, FlowerColor.RED, FlowerType.ROSE);
-        FlowerInfo flowerInfo3 = new FlowerInfo(5.0, FlowerColor.RED, FlowerType.TULIP);
+        Flower flowerA = new Flower(DEFAULT_PRICE, DEFAULT_LENGTH,
+                                    FlowerColor.RED, FlowerType.ROSE);
+        Flower flowerB = new Flower(DEFAULT_PRICE, DEFAULT_LENGTH, 
+                                    FlowerColor.BLUE, FlowerType.TULIP);
+        FlowerInfo flowerInfoA = new FlowerInfo(DEFAULT_LENGTH,
+                                    FlowerColor.BLUE, FlowerType.TULIP);
+        FlowerInfo flowerInfoB = new FlowerInfo(DEFAULT_LENGTH,
+                                    FlowerColor.RED, FlowerType.ROSE);
+        FlowerInfo flowerInfoC = new FlowerInfo(DEFAULT_LENGTH,
+                                    FlowerColor.RED, FlowerType.TULIP);
 
-        FlowerPack flowerPack1 = new FlowerPack(flower1, 5);
-        FlowerPack flowerPack2 = new FlowerPack(flower2, 5);
+        FlowerPack flowerPackA = new FlowerPack(flowerA, DEFAULT_COUNT);
+        FlowerPack flowerPackB = new FlowerPack(flowerB, DEFAULT_COUNT);
 
-        FlowerBucket flowerBucket1 = new FlowerBucket();
-        flowerBucket1.add(flowerPack1);
-        flowerBucket1.add(flowerPack2);
+        FlowerBucket flowerBucketA = new FlowerBucket();
+        flowerBucketA.add(flowerPackA);
+        flowerBucketA.add(flowerPackB);
 
-        FlowerBucket flowerBucket2 = new FlowerBucket();
-        flowerBucket2.add(flowerPack1);
+        FlowerBucket flowerBucketB = new FlowerBucket();
+        flowerBucketB.add(flowerPackA);
 
         flowerStore = new FlowerStore();
-        flowerStore.addBucket(flowerBucket1);
-        flowerStore.addBucket(flowerBucket2);
+        flowerStore.addBucket(flowerBucketA);
+        flowerStore.addBucket(flowerBucketB);
 
-        List<FlowerInfo> matchingList = List.of(flowerInfo1);
-        List<FlowerInfo> notMatchingList = List.of(flowerInfo1, flowerInfo2, flowerInfo3);
+        List<FlowerInfo> matchingList = List.of(flowerInfoA);
+        List<FlowerInfo> notMatchingList = List.of(flowerInfoA,
+                                            flowerInfoB, flowerInfoC);
 
-        List<FlowerBucket> expectedMatching = List.of(flowerBucket1);
+        List<FlowerBucket> expectedMatching = List.of(flowerBucketA);
         List<FlowerBucket> expectedNotMatching = List.of();
 
-        Assertions.assertEquals(expectedMatching, flowerStore.search(matchingList));
-        Assertions.assertEquals(expectedNotMatching, flowerStore.search(notMatchingList));
+        Assertions.assertEquals(expectedMatching,
+                                flowerStore.search(matchingList));
+        Assertions.assertEquals(expectedNotMatching,
+                                flowerStore.search(notMatchingList));
     }
 }
 

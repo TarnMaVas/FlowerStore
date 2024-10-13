@@ -14,5 +14,14 @@ public enum FlowerColor {
     public String toString() {
         return colorCode;
     }
+
+    public static FlowerColor getColor(String color) {
+        for (FlowerColor flowerColor : FlowerColor.values()) {
+            if (flowerColor.toString().equals(color)) {
+                return flowerColor;
+            }
+        }
+        return null;
+    }
     
 }
