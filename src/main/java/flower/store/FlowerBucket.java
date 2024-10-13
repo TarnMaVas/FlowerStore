@@ -23,4 +23,13 @@ public class FlowerBucket {
         }
         return price;
     }
+
+    public boolean matches(ArrayList<FlowerInfo> flowerDescriptions) {
+        for (FlowerInfo flowerInfo: flowerDescriptions) {
+            if (!flowerPacks.stream().anyMatch(pack -> pack.matches(flowerInfo))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

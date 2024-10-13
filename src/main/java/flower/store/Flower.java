@@ -5,19 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter @NoArgsConstructor @AllArgsConstructor
-public class Flower {
+@Setter @Getter @NoArgsConstructor @AllArgsConstructor
+public class Flower extends FlowerInfo {
 
-    @Getter
     private double price;
-
-    @Getter
-    private double sepalLength;
-
-    private FlowerColor color;
-
-    @Getter
-    private FlowerType type;
 
     public Flower(Flower flower) {
         this.price = flower.price;
@@ -25,9 +16,4 @@ public class Flower {
         this.color = flower.color;
         this.type = flower.getType();
     }
-
-    public String getColor() {
-        return color.toString();
-    }
-
 }
