@@ -17,9 +17,9 @@ import flower.store.FlowerPack;
 
 public class FlowerBucketTest {
     private static final Random RANDOM_GENERATOR = new Random();
-    public static final int DEFAULT_PRICE = 10;
-    public static final int DEFAULT_LENGTH = 5;
-    public static final int DEFAULT_COUNT = 5;
+    private static final int DEFAULT_PRICE = 10;
+    private static final int DEFAULT_LENGTH = 5;
+    private static final int DEFAULT_COUNT = 5;
     private static final int MAX_QUANTITY = 1000;
     private static final int MAX_PRICE = 100;
 

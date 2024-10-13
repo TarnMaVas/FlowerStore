@@ -15,9 +15,9 @@ public class FlowerPackTest {
     private static final int MAX_PRICE = 100;
     private static final double MAX_LENGTH = 100.0;
     private static final int MAX_QUANTITY = 1000;
-    public static final int DEFAULT_PRICE = 10;
-    public static final int DEFAULT_LENGTH = 5;
-    public static final int DEFAULT_COUNT = 5;
+    private static final int DEFAULT_PRICE = 10;
+    private static final int DEFAULT_LENGTH = 5;
+    private static final int DEFAULT_COUNT = 5;
 
     @Test
     public void testPrice() {

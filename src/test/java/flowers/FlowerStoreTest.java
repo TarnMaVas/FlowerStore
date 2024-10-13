@@ -16,9 +16,9 @@ import flower.store.FlowerType;
 
 public class FlowerStoreTest {
 
-    public static final int DEFAULT_PRICE = 10;
-    public static final int DEFAULT_LENGTH = 5;
-    public static final int DEFAULT_COUNT = 5;
+    private static final int DEFAULT_PRICE = 10;
+    private static final int DEFAULT_LENGTH = 5;
+    private static final int DEFAULT_COUNT = 5;
 
     private FlowerStore flowerStore;
 
